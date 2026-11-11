@@ -1,61 +1,240 @@
+
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="google-site-verification" content="cs_7enA9-H0IOu5mWOF5bT-73rQT1Fqb6QNcq8YVW8Q" />
+
 <title>SmartBiz — إدارة متجرك</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#172033}
-header{background:#111827;color:white;padding:28px 18px;text-align:center}header h1{margin:0;color:#38bdf8}header p{margin:8px 0 0}
-main{max-width:850px;margin:24px auto;padding:0 14px}.card{background:white;padding:22px;border-radius:15px;margin:16px 0;box-shadow:0 4px 16px #14213d0a}
-h2{margin-top:0}label{display:block;margin-top:12px;font-size:14px;color:#475569}
-input,select,button{width:100%;padding:12px;margin-top:6px;border-radius:9px;font-size:16px}
-input,select{border:1px solid #cbd5e1}button{border:0;background:#0284c7;color:white;font-weight:bold;cursor:pointer}
-.result{margin-top:14px;padding:14px;background:#e0f2fe;border-radius:9px;font-weight:bold}
-.order{border:1px solid #e2e8f0;padding:12px;border-radius:10px;margin:10px 0;overflow-wrap:anywhere}
-.order button{background:#dc2626;margin-top:8px}footer{text-align:center;color:#64748b;padding:18px}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f3f6fb;
+ color:#172033;
+}
+header{
+ background:#111827;
+ color:white;
+ padding:28px 18px;
+ text-align:center;
+}
+header h1{margin:0;color:#38bdf8}
+header p{margin:8px 0 0}
+main{
+ max-width:850px;
+ margin:24px auto;
+ padding:0 14px;
+}
+.card{
+ background:white;
+ padding:22px;
+ border-radius:15px;
+ margin:16px 0;
+ box-shadow:0 4px 16px #14213d0a;
+}
+h2{margin-top:0}
+label{
+ display:block;
+ margin-top:12px;
+ font-size:14px;
+ color:#475569;
+}
+input,select,button{
+ width:100%;
+ padding:12px;
+ margin-top:6px;
+ border-radius:9px;
+ font-size:16px;
+}
+input,select{border:1px solid #cbd5e1}
+button{
+ border:0;
+ background:#0284c7;
+ color:white;
+ font-weight:bold;
+ cursor:pointer;
+}
+.result{
+ margin-top:14px;
+ padding:14px;
+ background:#e0f2fe;
+ border-radius:9px;
+ font-weight:bold;
+}
+.order{
+ border:1px solid #e2e8f0;
+ padding:12px;
+ border-radius:10px;
+ margin:10px 0;
+ overflow-wrap:anywhere;
+}
+.order button{
+ background:#dc2626;
+ margin-top:8px;
+}
+footer{
+ text-align:center;
+ color:#64748b;
+ padding:18px;
+}
 </style>
-</head><meta name="google-site-verification" content="cs_7enA9-H0IOu5mWOF5bT-73rQT1Fqb6QNcq8YVW8Q" />
+</head>
+
 <body>
-<header><h1>SmartBiz</h1><p>أدوات بسيطة لإدارة المتجر وحساب الأرباح</p></header>
+
+<header>
+<h1>SmartBiz</h1>
+<p>أدوات بسيطة لإدارة المتجر وحساب الأرباح</p>
+</header>
+
 <main>
+
 <section class="card">
 <h2>حاسبة ربح المنتج</h2>
-<label>اسم المنتج</label><input id="product" placeholder="مثال: سماعة بلوتوث">
-<label>تكلفة الشراء (جنيه)</label><input id="cost" type="number" min="0" placeholder="500">
-<label>سعر البيع (جنيه)</label><input id="price" type="number" min="0" placeholder="700">
-<label>الشحن والمصاريف (جنيه)</label><input id="expenses" type="number" min="0" placeholder="50">
-<button onclick="calculate()">احسب الربح</button><div id="result" class="result">الربح هيظهر هنا</div>
+
+<label>اسم المنتج</label>
+<input id="product" placeholder="مثال: سماعة بلوتوث">
+
+<label>تكلفة الشراء (جنيه)</label>
+<input id="cost" type="number" min="0" placeholder="500">
+
+<label>سعر البيع (جنيه)</label>
+<input id="price" type="number" min="0" placeholder="700">
+
+<label>الشحن والمصاريف (جنيه)</label>
+<input id="expenses" type="number" min="0" placeholder="50">
+
+<button onclick="calculate()">احسب الربح</button>
+
+<div id="result" class="result">الربح هيظهر هنا</div>
 </section>
+
 <section class="card">
 <h2>إضافة طلب تجريبي</h2>
-<label>اسم العميل</label><input id="customer" placeholder="اسم العميل">
-<label>المنتج</label><input id="orderProduct" placeholder="المنتج المطلوب">
-<label>قيمة الطلب (جنيه)</label><input id="orderPrice" type="number" min="0" placeholder="700">
-<label>حالة الطلب</label><select id="status"><option>جديد</option><option>تم التأكيد</option><option>تم الشحن</option><option>تم التسليم</option><option>ملغي</option></select>
+
+<label>اسم العميل</label>
+<input id="customer" placeholder="اسم العميل">
+
+<label>المنتج</label>
+<input id="orderProduct" placeholder="المنتج المطلوب">
+
+<label>قيمة الطلب (جنيه)</label>
+<input id="orderPrice" type="number" min="0" placeholder="700">
+
+<label>حالة الطلب</label>
+<select id="status">
+<option>جديد</option>
+<option>تم التأكيد</option>
+<option>تم الشحن</option>
+<option>تم التسليم</option>
+<option>ملغي</option>
+</select>
+
 <button onclick="addOrder()">إضافة الطلب</button>
 </section>
-<section class="card"><h2>الطلبات المسجلة على هذا الجهاز</h2><div id="orders">لا توجد طلبات بعد.</div></section>
-</main><footer>SmartBiz • نسخة تجريبية محلية</footer>
+
+<section class="card">
+<h2>الطلبات المسجلة على هذا الجهاز</h2>
+<div id="orders">لا توجد طلبات بعد.</div>
+</section>
+
+</main>
+
+<footer>SmartBiz • نسخة تجريبية محلية</footer>
+
 <script>
 function calculate(){
  const name=document.getElementById('product').value.trim();
- const c=Number(document.getElementById('cost').value),p=Number(document.getElementById('price').value),e=Number(document.getElementById('expenses').value);
- if(!name||document.getElementById('cost').value===''||document.getElementById('price').value===''||document.getElementById('expenses').value===''||c<0||p<=0||e<0){document.getElementById('result').textContent='أدخل بيانات صحيحة في كل الخانات.';return}
- document.getElementById('result').textContent='الربح المتوقع: '+(p-c-e)+' جنيه';
+ const costField=document.getElementById('cost').value;
+ const priceField=document.getElementById('price').value;
+ const expensesField=document.getElementById('expenses').value;
+
+ const c=Number(costField);
+ const p=Number(priceField);
+ const e=Number(expensesField);
+
+ if(!name||costField===''||priceField===''||
+ expensesField===''||c<0||p<=0||e<0){
+ document.getElementById('result').textContent=
+ 'أدخل بيانات صحيحة في كل الخانات.';
+ return;
+ }
+
+ document.getElementById('result').textContent=
+ 'الربح المتوقع: '+(p-c-e)+' جنيه';
 }
-function readOrders(){try{return JSON.parse(localStorage.getItem('smartbiz_orders')||'[]')}catch{return []}}
+
+function readOrders(){
+ try{
+ return JSON.parse(localStorage.getItem('smartbiz_orders')||'[]');
+ }catch{
+ return [];
+ }
+}
+
 function addOrder(){
- const customer=document.getElementById('customer').value.trim(),product=document.getElementById('orderProduct').value.trim(),priceField=document.getElementById('orderPrice').value,price=Number(priceField),status=document.getElementById('status').value;
- if(!customer||!product||priceField===''||price<=0){alert('اكتب اسم العميل والمنتج وقيمة صحيحة');return}
- const orders=readOrders();orders.push({customer,product,price,status});localStorage.setItem('smartbiz_orders',JSON.stringify(orders));
- document.getElementById('customer').value='';document.getElementById('orderProduct').value='';document.getElementById('orderPrice').value='';showOrders();
+ const customer=document.getElementById('customer').value.trim();
+ const product=document.getElementById('orderProduct').value.trim();
+ const priceField=document.getElementById('orderPrice').value;
+ const price=Number(priceField);
+ const status=document.getElementById('status').value;
+
+ if(!customer||!product||priceField===''||price<=0){
+ alert('اكتب اسم العميل والمنتج وقيمة صحيحة');
+ return;
+ }
+
+ const orders=readOrders();
+ orders.push({customer,product,price,status});
+
+ localStorage.setItem('smartbiz_orders',JSON.stringify(orders));
+
+ document.getElementById('customer').value='';
+ document.getElementById('orderProduct').value='';
+ document.getElementById('orderPrice').value='';
+
+ showOrders();
 }
+
 function showOrders(){
- const list=readOrders(),container=document.getElementById('orders');container.replaceChildren();
- if(!list.length){container.textContent='لا توجد طلبات بعد.';return}
- list.forEach((o,i)=>{const div=document.createElement('div');div.className='order';const p=document.createElement('p');p.textContent=`العميل: ${o.customer} | المنتج: ${o.product} | السعر: ${o.price} جنيه | الحالة: ${o.status}`;const b=document.createElement('button');b.textContent='حذف الطلب';b.onclick=()=>{const a=readOrders();a.splice(i,1);localStorage.setItem('smartbiz_orders',JSON.stringify(a));showOrders()};div.append(p,b);container.append(div)});
+ const list=readOrders();
+ const container=document.getElementById('orders');
+ container.replaceChildren();
+
+ if(!list.length){
+ container.textContent='لا توجد طلبات بعد.';
+ return;
+ }
+
+ list.forEach((o,i)=>{
+ const div=document.createElement('div');
+ div.className='order';
+
+ const p=document.createElement('p');
+ p.textContent=`العميل: ${o.customer} | المنتج: ${o.product} | السعر: ${o.price} جنيه | الحالة: ${o.status}`;
+
+ const b=document.createElement('button');
+ b.textContent='حذف الطلب';
+
+ b.onclick=()=>{
+ const a=readOrders();
+ a.splice(i,1);
+ localStorage.setItem('smartbiz_orders',JSON.stringify(a));
+ showOrders();
+ };
+
+ div.append(p,b);
+ container.append(div);
+ });
 }
+
 showOrders();
 </script>
-</body></html>
+
+</body>
+</html>
